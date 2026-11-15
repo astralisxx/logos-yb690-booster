@@ -52,7 +52,15 @@ https://github.com/user-attachments/assets/aa184507-3f72-4cd1-baa2-39ed6d15b1e9
 
 https://github.com/user-attachments/assets/4ad92f2b-0d38-49f6-8680-2f4612710713
 
-## Tech stack
+## Conclusions
+
+- Frozen golden tests hold the Python physics core to the MATLAB reference models, single- and two-stage, within a 1e-6 tolerance on the model equations.
+- Only suction and final discharge pressures are imposed: in a 40-to-690 bar nitrogen case the interstage pressure settles by itself and the two stage flows balance within 0.09 %.
+- The two-stage real-gas model solves ten crank cycles in about 9 s on a laptop, cheap enough that inverse design searches the physics model directly instead of a trained surrogate.
+- Inverse-design results are self-consistent: re-running a returned machine through the simulator reproduces all its reported metrics to 1e-12 relative.
+
+<details>
+<summary>Tech stack</summary>
 
 | Layer | Technology |
 |---|---|
@@ -65,6 +73,8 @@ https://github.com/user-attachments/assets/4ad92f2b-0d38-49f6-8680-2f4612710713
 | CI | GitHub Actions |
 
 All front-end libraries and fonts ship with the app, so it needs no network connection.
+
+</details>
 
 ## Engineering quality
 
@@ -79,12 +89,10 @@ All front-end libraries and fonts ship with the app, so it needs no network conn
 
 Single Stage, Multi Stage, Design and the 3-D views work in a macOS desktop build (Apple silicon).
 
-## Source code and access
+## Source and copyright
 
 The source code is private; this repository holds only the description, images and video. Read
 access may be granted on request for academic review: open an issue here.
-
-## Copyright
 
 Developed by Ahmet Berkay Şimşek (METU) for Logos Kimya. Copyright (c) 2025-2026 Logos Kimya. All
 rights reserved. No licence is granted to use, copy, modify or distribute the software, its source
